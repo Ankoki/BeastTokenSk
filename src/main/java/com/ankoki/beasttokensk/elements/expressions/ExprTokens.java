@@ -13,6 +13,7 @@ import ch.njol.util.Kleenean;
 import ch.njol.util.coll.CollectionUtils;
 import me.mraxetv.beasttokens.api.events.tokendrops.blocks.BTBlockTokenDropEvent;
 import me.mraxetv.beasttokens.api.events.tokendrops.farming.BTFarmingTokenDropEvent;
+import me.mraxetv.beasttokens.api.events.tokendrops.mobs.BTMobTokenDropEvent;
 import me.mraxetv.beasttokens.api.events.tokendrops.mobs.BTMythicMobTokenDropEvent;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.NotNull;
@@ -51,6 +52,9 @@ public class ExprTokens extends SimpleExpression<Double> {
         if (e instanceof BTMythicMobTokenDropEvent) {
             return ((BTMythicMobTokenDropEvent) e).getTokens();
         }
+        if (e instanceof BTMobTokenDropEvent) {
+            return ((BTMobTokenDropEvent) e).getTokens();
+        }
         return null;
     }
 
@@ -75,12 +79,15 @@ public class ExprTokens extends SimpleExpression<Double> {
         if (event instanceof BTMythicMobTokenDropEvent) {
             return Double.toString(((BTMythicMobTokenDropEvent) event).getTokens());
         }
+        if (event instanceof BTMobTokenDropEvent) {
+            return Double.toString(((BTMobTokenDropEvent) event).getTokens());
+        }
         return null;
     }
 
     @Override
     public boolean init(Expression<?>[] expressions, int i, Kleenean kleenean, SkriptParser.ParseResult parseResult) {
-        if (!ScriptLoader.isCurrentEvent(BTBlockTokenDropEvent.class) && !ScriptLoader.isCurrentEvent(BTFarmingTokenDropEvent.class)) {
+        if (!ScriptLoader.isCurrentEvent(BTBlockTokenDropEvent.class) && !ScriptLoader.isCurrentEvent(BTFarmingTokenDropEvent.class) && !ScriptLoader.isCurrentEvent(BTMythicMobTokenDropEvent.class) && !ScriptLoader.isCurrentEvent(BTMobTokenDropEvent.class)) {
             Skript.error("Cannot use 'tokens' outside of a token drop event", ErrorQuality.SEMANTIC_ERROR);
             return false;
         }
@@ -106,7 +113,7 @@ public class ExprTokens extends SimpleExpression<Double> {
                     break;
             }
         }
-        else if (event instanceof BTFarmingTokenDropEvent) {
+        if (event instanceof BTFarmingTokenDropEvent) {
             double tokens = ((BTFarmingTokenDropEvent) event).getTokens();
             switch (mode) {
                 case SET:
@@ -122,7 +129,7 @@ public class ExprTokens extends SimpleExpression<Double> {
                     break;
             }
         }
-        else if (event instanceof BTMythicMobTokenDropEvent) {
+        if (event instanceof BTMythicMobTokenDropEvent) {
             double tokens = ((BTMythicMobTokenDropEvent) event).getTokens();
             switch (mode) {
                 case SET:
@@ -135,6 +142,22 @@ public class ExprTokens extends SimpleExpression<Double> {
                     break;
                 case REMOVE:
                     ((BTMythicMobTokenDropEvent) event).setTokens(tokens - d);
+                    break;
+            }
+        }
+        if (event instanceof BTMobTokenDropEvent) {
+            double tokens = ((BTMobTokenDropEvent) event).getTokens();
+            switch (mode) {
+                case SET:
+                case DELETE:
+                case RESET:
+                    ((BTMobTokenDropEvent) event).setTokens(d);
+                    break;
+                case ADD:
+                    ((BTMobTokenDropEvent) event).setTokens(tokens + d);
+                    break;
+                case REMOVE:
+                    ((BTMobTokenDropEvent) event).setTokens(tokens - d);
                     break;
             }
         }

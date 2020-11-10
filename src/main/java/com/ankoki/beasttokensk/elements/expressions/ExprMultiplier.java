@@ -13,6 +13,7 @@ import ch.njol.util.Kleenean;
 import ch.njol.util.coll.CollectionUtils;
 import me.mraxetv.beasttokens.api.events.tokendrops.blocks.BTBlockTokenDropEvent;
 import me.mraxetv.beasttokens.api.events.tokendrops.farming.BTFarmingTokenDropEvent;
+import me.mraxetv.beasttokens.api.events.tokendrops.mobs.BTMobTokenDropEvent;
 import me.mraxetv.beasttokens.api.events.tokendrops.mobs.BTMythicMobTokenDropEvent;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.NotNull;
@@ -73,12 +74,15 @@ public class ExprMultiplier extends SimpleExpression<Double> {
         if (event instanceof BTMythicMobTokenDropEvent) {
             return Double.toString(((BTMythicMobTokenDropEvent) event).getMultiplierTokens());
         }
+        if (event instanceof BTMobTokenDropEvent) {
+            return Double.toString(((BTMobTokenDropEvent) event).getMultiplierTokens());
+        }
         return null;
     }
 
     @Override
     public boolean init(Expression<?>[] expressions, int i, Kleenean kleenean, SkriptParser.ParseResult parseResult) {
-        if (!ScriptLoader.isCurrentEvent(BTBlockTokenDropEvent.class) && !ScriptLoader.isCurrentEvent(BTFarmingTokenDropEvent.class)) {
+        if (!ScriptLoader.isCurrentEvent(BTBlockTokenDropEvent.class) && !ScriptLoader.isCurrentEvent(BTFarmingTokenDropEvent.class) && !ScriptLoader.isCurrentEvent(BTMythicMobTokenDropEvent.class) && !ScriptLoader.isCurrentEvent(BTMobTokenDropEvent.class)) {
             Skript.error("Cannot use 'multiplier' outside of a token drop event", ErrorQuality.SEMANTIC_ERROR);
             return false;
         }
@@ -142,6 +146,22 @@ public class ExprMultiplier extends SimpleExpression<Double> {
                     break;
                 case REMOVE:
                     ((BTMythicMobTokenDropEvent) event).setMultiplierTokens(multipler - d);
+                    break;
+            }
+        }
+        if (event instanceof BTMobTokenDropEvent) {
+            double tokens = ((BTMobTokenDropEvent) event).getTokens();
+            switch (mode) {
+                case SET:
+                case DELETE:
+                case RESET:
+                    ((BTMobTokenDropEvent) event).setMultiplierTokens(d);
+                    break;
+                case ADD:
+                    ((BTMobTokenDropEvent) event).setMultiplierTokens(tokens + d);
+                    break;
+                case REMOVE:
+                    ((BTMobTokenDropEvent) event).setMultiplierTokens(tokens - d);
                     break;
             }
         }

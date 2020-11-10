@@ -27,7 +27,7 @@ import org.jetbrains.annotations.Nullable;
 public class EvtFarmingTokenDrop extends SimpleEvent {
 
     static {
-        Skript.registerEvent("Block Token Drop", EvtBlockTokenDrop.class, BTBlockTokenDropEvent.class, "[(beasttokens|beast tokens)] (farm[ing]|crop[s]) token[s] (drop|dropping)");
+        Skript.registerEvent("Farming Token Drop", EvtFarmingTokenDrop.class, BTFarmingTokenDropEvent.class, "[(beasttokens|beast tokens)] (farm[ing]|crop[s]) token[s] (drop|dropping)");
         EventValues.registerEventValue(BTFarmingTokenDropEvent.class, Player.class, new Getter<Player, BTFarmingTokenDropEvent>() {
             @Override
             public Player get(BTFarmingTokenDropEvent e) {
