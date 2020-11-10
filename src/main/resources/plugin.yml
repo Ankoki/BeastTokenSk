@@ -1,0 +1,14 @@
+name: BeastTokenSk
+main: com.ankoki.beasttokensk.BeastTokenSk
+api-version: 1.16
+version: 1.0
+description: A Skript Addon for BeastTokens
+author: Ankoki
+softdepend:
+  - Skript
+  - BeastTokens
+  - MythicMobs
+commands:
+  btsk:
+    description: This let's users check for updates
+    aliases: beasttokensk
