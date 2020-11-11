@@ -46,7 +46,7 @@ public class Utils {
         spigot.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.ankoki.com"));
         TextComponent github = new TextComponent(Utils.cC("                  &7[&6GITHUB&7]"));
         github.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Click me to visit Github!").color(net.md_5.bungee.api.ChatColor.GRAY).italic(true).create()));
-        github.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.ankoki.com"));
+        github.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.github.com/ankoki-dev/BeastTokenSk/releases"));
         github.addExtra(spigot);
         p.spigot().sendMessage(github);
         PluginDescriptionFile desc = BeastTokenSk.plugin().getDescription();
