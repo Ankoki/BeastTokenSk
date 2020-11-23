@@ -49,6 +49,6 @@ public class ExprMaxTokens extends SimpleExpression<Double> {
 
     @Override
     public boolean init(Expression<?>[] expressions, int i, Kleenean kleenean, SkriptParser.ParseResult parseResult) {
-        return false;
+        return true;
     }
 }
