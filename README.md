@@ -5,7 +5,7 @@ This requires BeastTokens v3.9.8, if any earlier versions are detected, BeastTok
 # How to use BeastTokenSk
 At this time, BeastTokenSk has a total of 5 Events, 2 Expressions and 1 Condition.  
   
-BeastTokenSk depends on Skript and BeastTokens, and cannot function without them. Here are the links:
+BeastTokenSk depends on Skript and BeastTokens, and cannot function without them. Here are the links:  
 github.com/SkriptLang/Skript/releases
 https://www.spigotmc.org/resources/beasttokens-multishop-mob-and-block-token-drops.20806/  
   
