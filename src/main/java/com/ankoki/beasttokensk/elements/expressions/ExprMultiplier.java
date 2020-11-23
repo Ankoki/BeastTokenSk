@@ -20,11 +20,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 @Name("Multiplier")
-@Description("The multiplier applied to tokens in an event")
+@Description("The multiplier applied to tokens in an event.")
 @Examples({"on block token drop:",
-        "    set event-multiplier to 5"})
+        "\tset event-multiplier to 5"})
 @Since("1.0")
-@Events("block token drop")
+@Events("Block Token Drop")
 public class ExprMultiplier extends SimpleExpression<Double> {
 
     static {

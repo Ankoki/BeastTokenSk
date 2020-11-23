@@ -6,13 +6,13 @@ import org.bukkit.event.Event;
 
 
 @Name("Mythic Mob Token Drop")
-@Description("Fired when a mythic mob drops BeastTokens")
+@Description("Fired when a mythic mob drops BeastTokens.")
 @Examples({"on mythic mob token drop:" +
-        "    if player has permission \"tokens.gain\":",
-        "        send \"You killed %event-entity% and recieved %event-tokens% tokens\"",
-        "        stop",
-        "    cancel event",
-        "    send \"You can't earn tokens until you have unlocked this feature!\""})
+        "\tif player has permission \"tokens.gain\":",
+        "\t\tsend \"You killed %event-entity% and recieved %event-tokens% tokens\"",
+        "\t\tstop",
+        "\t\tcancel event",
+        "\t\tsend \"You can't earn tokens until you have unlocked this feature!\""})
 @Since("1.0")
 @RequiredPlugins({"BeastTokens", "MythicMobs"})
 public class EvtMythicMobTokenDrop extends SimpleEvent {

@@ -11,27 +11,8 @@ import org.bukkit.plugin.PluginDescriptionFile;
 
 public class Utils {
 
-    public static void log(String s) {
-        BeastTokenSk.plugin().getServer().getLogger().info(cC("&7[&6BTSK&7] " + s));
-    }
-
-    public static void logError(String message) {
-        BeastTokenSk.plugin().getServer().getLogger().severe(Utils.cC(message));
-    }
-
     public static String cC(String s) {
         return ChatColor.translateAlternateColorCodes('&', s);
-    }
-
-    public static void dependencyNotFound(String dependency, BeastTokenSk plugin) {
-        Utils.logError("&c## Fatal Error with BeastTokenSk");
-        Utils.logError("&c##");
-        Utils.logError("&c## " + dependency + " was not found");
-        Utils.logError("&c## Are you sure you have it enabled?");
-        Utils.logError("&c## Check previous logs for " + dependency + " errors");
-        Utils.logError("&c##");
-        Utils.logError("&c## Disabling this plugin...");
-        plugin.getServer().getPluginManager().disablePlugin(plugin);
     }
 
     public static String pCc(String s) {

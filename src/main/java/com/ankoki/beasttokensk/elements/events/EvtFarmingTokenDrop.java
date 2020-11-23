@@ -15,19 +15,19 @@ import org.bukkit.event.Event;
 import org.jetbrains.annotations.Nullable;
 
 @Name("Farming Token Drop")
-@Description("Fired when a crop drops BeastTokens")
+@Description("Fired when a crop drops BeastTokens.")
 @Examples({"on farming token drop:" +
-        "    if player has permission \"tokens.gain\":",
-        "        send \"You broke %event-block% and recieved %event-tokens% tokens\"",
-        "        stop",
-        "    cancel event",
-        "    send \"You can't earn tokens until you have unlocked this!\""})
+        "\tif player has permission \"tokens.gain\":",
+        "\t\tsend \"You broke %event-block% and recieved %event-tokens% tokens\"",
+        "\t\tstop",
+        "\tcancel event",
+        "\tsend \"You can't earn tokens until you have unlocked this!\""})
 @Since("1.0")
 @RequiredPlugins("BeastTokens")
 public class EvtFarmingTokenDrop extends SimpleEvent {
 
     static {
-        Skript.registerEvent("Farming Token Drop", EvtFarmingTokenDrop.class, BTFarmingTokenDropEvent.class, "[(beasttokens|beast tokens)] (farm[ing]|crop[s]) token[s] (drop|dropping)");
+        Skript.registerEvent("Farming Token Drop", EvtFarmingTokenDrop.class, BTFarmingTokenDropEvent.class, "[beast[ ]token[[']s]] (farm[ing]|crop[s]) [beast[ ]]token[s] (drop|dropping)");
         EventValues.registerEventValue(BTFarmingTokenDropEvent.class, Player.class, new Getter<Player, BTFarmingTokenDropEvent>() {
             @Override
             public Player get(BTFarmingTokenDropEvent e) {

@@ -5,7 +5,6 @@ import ch.njol.skript.doc.*;
 import ch.njol.skript.lang.util.SimpleEvent;
 import ch.njol.skript.registrations.EventValues;
 import ch.njol.skript.util.Getter;
-import me.mraxetv.beasttokens.api.events.tokendrops.blocks.BTBlockTokenDropEvent;
 import me.mraxetv.beasttokens.api.events.tokendrops.mobs.BTMobTokenDropEvent;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -14,19 +13,19 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.Nullable;
 
 @Name("Monster Token Drop")
-@Description("Fired when a monster drops BeastTokens")
+@Description("Fired when a monster drops BeastTokens.")
 @Examples({"on mob token drop:" +
-        "    if player has permission \"tokens.gain\":",
-        "        send \"You killed %event-entity% and recieved %event-tokens% tokens\"",
-        "        stop",
-        "    cancel event",
-        "    send \"You can't earn tokens until you have unlocked this!\""})
+        "\tif player has permission \"tokens.gain\":",
+        "\t\tsend \"You killed %event-entity% and recieved %event-tokens% tokens\"",
+        "\t\tstop",
+        "\tcancel event",
+        "\tsend \"You can't earn tokens until you have unlocked this!\""})
 @Since("1.0")
 @RequiredPlugins("BeastTokens")
 public class EvtMobTokenDrop extends SimpleEvent {
 
     static {
-        Skript.registerEvent("Mob Token Drop", EvtMobTokenDrop.class, BTMobTokenDropEvent.class, "[(beasttokens|beast tokens)] (mob[s]|monster[s]) token[s] (drop|dropping)");
+        Skript.registerEvent("Mob Token Drop", EvtMobTokenDrop.class, BTMobTokenDropEvent.class, "[beast[ ]token[[']s]] (mob[s]|monster[s]) [beast[ ]]token[s] (drop|dropping)");
         EventValues.registerEventValue(BTMobTokenDropEvent.class, Player.class, new Getter<Player, BTMobTokenDropEvent>() {
             @Override
             public Player get(BTMobTokenDropEvent e) {

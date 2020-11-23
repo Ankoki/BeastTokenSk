@@ -14,19 +14,19 @@ import me.mraxetv.beasttokens.api.events.tokendrops.blocks.BTBlockTokenDropEvent
 import org.jetbrains.annotations.Nullable;
 
 @Name("Block Token Drop")
-@Description("Fired when a block drops BeastTokens")
+@Description("Fired when a block drops BeastTokens.")
 @Examples({"on block token drop:" +
-           "    if player has permission \"tokens.gain\":",
-           "        send \"You broke %event-block% and recieved %event-tokens% tokens\"",
-           "        stop",
-           "    cancel event",
-           "    send \"You can't earn tokens until you have unlocked this!\""})
+           "\tif player has permission \"tokens.gain\":",
+           "\t\tsend \"You broke %event-block% and recieved %event-tokens% tokens\"",
+           "\t\tstop",
+           "\tcancel event",
+           "\tsend \"You can't earn tokens until you have unlocked this!\""})
 @Since("1.0")
 @RequiredPlugins("BeastTokens")
 public class EvtBlockTokenDrop extends SimpleEvent {
 
     static {
-        Skript.registerEvent("Block Token Drop", EvtBlockTokenDrop.class, BTBlockTokenDropEvent.class, "[(beasttokens|beast tokens)] block token[s] (drop|dropping)");
+        Skript.registerEvent("Block Token Drop", EvtBlockTokenDrop.class, BTBlockTokenDropEvent.class, "[beast[ ]token[[']s]] block [beast[ ]]token[s] (drop|dropping)");
         EventValues.registerEventValue(BTBlockTokenDropEvent.class, Player.class, new Getter<Player, BTBlockTokenDropEvent>() {
             @Override
             public Player get(BTBlockTokenDropEvent e) {
