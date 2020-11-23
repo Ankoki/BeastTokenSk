@@ -3,7 +3,13 @@ BeastTokenSk is a Skript addon which allows users to utilise the BeastTokensAPI 
 This requires BeastTokens v3.9.8, if any earlier versions are detected, BeastTokenSk will disabled.
 
 # How to use BeastTokenSk
-At this time, BeastTokenSk has a total of 5 Events, 2 Expressions and 1 Condition.
+At this time, BeastTokenSk has a total of 5 Events, 2 Expressions and 1 Condition.  
+  
+BeastTokenSk depends on Skript and BeastTokens, and cannot function without them. Here are the links:
+github.com/SkriptLang/Skript/releases
+https://www.spigotmc.org/resources/beasttokens-multishop-mob-and-block-token-drops.20806/  
+  
+To use, place BeastTokens, Skript, and BeastTokenSk in the plugins folder in your server, and your good to start Skripting!
 
 # Events
 **Block Token Drop Event**  
@@ -118,7 +124,7 @@ command /redeem:
         add 100 to player's tokens
 ```  
 # Support  
-If you have any issues, feel free to join our discord [here](discord.com/invite/aCDNj8s)  
+If you have any issues, feel free to join our discord here -> discord.com/invite/aCDNj8s 
 You can also send me a private DM at **Ankoki#0001**
 # Current Version 1.0  
 This concludes the documentation for BeastTokenSk.  
