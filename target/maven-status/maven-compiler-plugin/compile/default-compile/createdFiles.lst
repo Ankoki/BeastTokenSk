@@ -3,7 +3,6 @@ com\ankoki\beasttokensk\elements\events\EvtFarmingTokenDrop.class
 com\ankoki\beasttokensk\BeastTokenSk$3.class
 com\ankoki\beasttokensk\elements\events\EvtFarmingTokenDrop$1.class
 com\ankoki\beasttokensk\elements\events\EvtMobTokenDrop$3.class
-com\ankoki\beasttokensk\elements\effects\EffTokenSlip.class
 com\ankoki\beasttokensk\elements\events\EvtMythicMobTokenDrop.class
 com\ankoki\beasttokensk\elements\events\EvtBlockTokenDrop$3.class
 com\ankoki\beasttokensk\elements\conditions\CondHasMaxTokens.class
