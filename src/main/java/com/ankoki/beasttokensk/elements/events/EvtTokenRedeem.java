@@ -1,7 +1,6 @@
 package com.ankoki.beasttokensk.elements.events;
 
 import ch.njol.skript.Skript;
-import ch.njol.skript.doc.*;
 import ch.njol.skript.lang.util.SimpleEvent;
 import ch.njol.skript.registrations.EventValues;
 import ch.njol.skript.util.Getter;
@@ -9,16 +8,9 @@ import me.mraxetv.beasttokens.api.events.BTokenRedeemEvent;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-@Name("Token Redeem")
-@Description("Fired when a player uses an item to redeem BeastTokens.")
-@Examples({"on token redeem:",
-        "\tif event-item is paper:",
-        "\t\tsend \"You used a paper withdraw slip!\"",
-        "\telse:",
-        "\t\tcancel event",
-        "\t\tsend \"You have used an illegal slip!\""})
-@Since("1.0")
-@RequiredPlugins("BeastTokens")
+/* Token Redeem
+ * Since 1.0
+ */
 public class EvtTokenRedeem extends SimpleEvent {
 
     static {

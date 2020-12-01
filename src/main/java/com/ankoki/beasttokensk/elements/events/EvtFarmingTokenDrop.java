@@ -1,11 +1,9 @@
 package com.ankoki.beasttokensk.elements.events;
 
 import ch.njol.skript.Skript;
-import ch.njol.skript.doc.*;
 import ch.njol.skript.lang.util.SimpleEvent;
 import ch.njol.skript.registrations.EventValues;
 import ch.njol.skript.util.Getter;
-import me.mraxetv.beasttokens.api.events.tokendrops.blocks.BTBlockTokenDropEvent;
 import me.mraxetv.beasttokens.api.events.tokendrops.farming.BTFarmingTokenDropEvent;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -14,16 +12,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.Nullable;
 
-@Name("Farming Token Drop")
-@Description("Fired when a crop drops BeastTokens.")
-@Examples({"on farming token drop:" +
-        "\tif player has permission \"tokens.gain\":",
-        "\t\tsend \"You broke %event-block% and recieved %event-tokens% tokens\"",
-        "\t\tstop",
-        "\tcancel event",
-        "\tsend \"You can't earn tokens until you have unlocked this!\""})
-@Since("1.0")
-@RequiredPlugins("BeastTokens")
+/* Farming Token Drop
+ * Since 1.0
+ */
 public class EvtFarmingTokenDrop extends SimpleEvent {
 
     static {

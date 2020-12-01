@@ -3,16 +3,15 @@ package com.ankoki.beasttokensk;
 import ch.njol.skript.Skript;
 import ch.njol.skript.SkriptAddon;
 import ch.njol.skript.conditions.base.PropertyCondition;
-import ch.njol.skript.lang.ExpressionType;
 import ch.njol.skript.registrations.EventValues;
 import ch.njol.skript.util.Getter;
 import ch.njol.skript.util.Version;
 import com.ankoki.beasttokensk.commands.BTSKCMD;
 import com.ankoki.beasttokensk.elements.conditions.CondHasMaxTokens;
 import com.ankoki.beasttokensk.elements.events.EvtMythicMobTokenDrop;
-import com.ankoki.beasttokensk.elements.expressions.ExprMaxTokens;
 import com.ankoki.beasttokensk.utils.Logger;
 import com.ankoki.beasttokensk.utils.Utils;
+import me.mraxetv.beasttokens.BeastTokensAPI;
 import me.mraxetv.beasttokens.api.events.tokendrops.mobs.BTMythicMobTokenDropEvent;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Location;
@@ -44,8 +43,8 @@ public class BeastTokenSk extends JavaPlugin {
         PluginDescriptionFile desc = getDescription();
 
         /*
-        Dependency checking
-        Softdepend on dependencies because i want to control the error handling
+         * Dependency checking
+         * Softdepend on dependencies because i want to control the error handling
          */
         if (pm.getPlugin("BeastTokens") == null) {
             logger.dependencyNotFound("BeastTokens");
@@ -107,7 +106,7 @@ public class BeastTokenSk extends JavaPlugin {
             addon.loadClasses("com.ankoki.beasttokensk.elements.events");
             addon.loadClasses("com.ankoki.beasttokensk.elements.expressions");
             addon.loadClasses("com.ankoki.beasttokens.elements.conditions");
-            register(CondHasMaxTokens.class, PropertyCondition.PropertyType.HAVE, "[the ]max[imum] [beast[ ]]tokens", "players");
+            register(CondHasMaxTokens.class, PropertyCondition.PropertyType.HAVE, "[the ]max[imum][ amount of] [beast[ ]]tokens", "players");
             logger.log("&bcom.ankoki.beasttokensk.elements &ahas been registered!");
         } catch (IOException ex) {
             ex.printStackTrace();

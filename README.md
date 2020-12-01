@@ -11,6 +11,11 @@ https://www.spigotmc.org/resources/beasttokens-multishop-mob-and-block-token-dro
   
 To use, place BeastTokens, Skript, and BeastTokenSk in the plugins folder in your server, and your good to start Skripting!
 
+#Documentation
+**skUnity**  
+Documentation can now also be found on skUnity!
+Please see here: https://docs.skunity.com/syntax/search/addon:BeastTokenSk
+
 # Events
 **Block Token Drop Event**  
 Fired when a block drops BeastTokens.  

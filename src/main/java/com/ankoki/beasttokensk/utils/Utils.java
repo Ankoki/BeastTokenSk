@@ -24,7 +24,7 @@ public class Utils {
         p.sendMessage(" ");
         TextComponent spigot = new TextComponent(Utils.cC("            &7[&6SPIGOT&7]"));
         spigot.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Click me to visit Spigot!").color(net.md_5.bungee.api.ChatColor.GRAY).italic(true).create()));
-        spigot.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.ankoki.com"));
+        spigot.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.spigotmc.org/resources/beasttokensk.86157/"));
         TextComponent github = new TextComponent(Utils.cC("                  &7[&6GITHUB&7]"));
         github.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Click me to visit Github!").color(net.md_5.bungee.api.ChatColor.GRAY).italic(true).create()));
         github.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.github.com/ankoki-dev/BeastTokenSk/releases"));
@@ -32,6 +32,13 @@ public class Utils {
         p.spigot().sendMessage(github);
         PluginDescriptionFile desc = BeastTokenSk.plugin().getDescription();
         p.sendMessage(Utils.cC("\n&7[&6BTSK&7] &bYou are currently running BeastTokenSk v" + desc.getVersion()));
+    }
+
+    public static TextComponent clickableUrl(String name, String hoverText, String url, net.md_5.bungee.api.ChatColor colour) {
+        TextComponent newClickable = new TextComponent(Utils.cC(name));
+        newClickable.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(hoverText).color(colour).italic(true).create()));
+        newClickable.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, url));
+        return newClickable;
     }
 
 }

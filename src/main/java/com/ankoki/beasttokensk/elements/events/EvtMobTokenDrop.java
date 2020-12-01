@@ -1,7 +1,6 @@
 package com.ankoki.beasttokensk.elements.events;
 
 import ch.njol.skript.Skript;
-import ch.njol.skript.doc.*;
 import ch.njol.skript.lang.util.SimpleEvent;
 import ch.njol.skript.registrations.EventValues;
 import ch.njol.skript.util.Getter;
@@ -12,16 +11,9 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.Nullable;
 
-@Name("Monster Token Drop")
-@Description("Fired when a monster drops BeastTokens.")
-@Examples({"on mob token drop:" +
-        "\tif player has permission \"tokens.gain\":",
-        "\t\tsend \"You killed %event-entity% and recieved %event-tokens% tokens\"",
-        "\t\tstop",
-        "\tcancel event",
-        "\tsend \"You can't earn tokens until you have unlocked this!\""})
-@Since("1.0")
-@RequiredPlugins("BeastTokens")
+/* Mob Token Drop
+ * Since 1.0
+ */
 public class EvtMobTokenDrop extends SimpleEvent {
 
     static {

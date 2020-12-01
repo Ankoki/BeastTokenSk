@@ -1,10 +1,6 @@
 package com.ankoki.beasttokensk.elements.expressions;
 
 import ch.njol.skript.Skript;
-import ch.njol.skript.doc.Description;
-import ch.njol.skript.doc.Examples;
-import ch.njol.skript.doc.Name;
-import ch.njol.skript.doc.Since;
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.ExpressionType;
 import ch.njol.skript.lang.SkriptParser;
@@ -14,12 +10,9 @@ import me.mraxetv.beasttokens.BeastTokensAPI;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.Nullable;
 
-@Name("Max Tokens")
-@Description("The max tokens set in the config.")
-@Examples({"command /max:",
-        "\ttrigger:",
-        "\t\tsend \"Max Tokens: %max tokens%\""})
-@Since("1.0")
+/* Max Tokens
+ * Since 1.0
+ */
 public class ExprMaxTokens extends SimpleExpression<Double> {
 
     static {
@@ -44,7 +37,7 @@ public class ExprMaxTokens extends SimpleExpression<Double> {
 
     @Override
     public String toString(@Nullable Event event, boolean b) {
-        return null;
+        return "max tokens";
     }
 
     @Override

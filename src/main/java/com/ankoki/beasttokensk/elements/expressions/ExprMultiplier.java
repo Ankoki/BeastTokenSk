@@ -3,7 +3,6 @@ package com.ankoki.beasttokensk.elements.expressions;
 import ch.njol.skript.ScriptLoader;
 import ch.njol.skript.Skript;
 import ch.njol.skript.classes.Changer;
-import ch.njol.skript.doc.*;
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.ExpressionType;
 import ch.njol.skript.lang.SkriptParser;
@@ -19,16 +18,13 @@ import org.bukkit.event.Event;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-@Name("Multiplier")
-@Description("The multiplier applied to tokens in an event.")
-@Examples({"on block token drop:",
-        "\tset event-multiplier to 5"})
-@Since("1.0")
-@Events("Block Token Drop")
+/* Multiplier
+ * Since 1.0
+ */
 public class ExprMultiplier extends SimpleExpression<Double> {
 
     static {
-        Skript.registerExpression(ExprMultiplier.class, Double.class, ExpressionType.SIMPLE, "[event-][ ]multiplier[s]");
+        Skript.registerExpression(ExprMultiplier.class, Double.class, ExpressionType.SIMPLE, "[event([-]|[ ])]multiplier[s]");
     }
 
     @Nullable
@@ -65,19 +61,7 @@ public class ExprMultiplier extends SimpleExpression<Double> {
 
     @Override
     public String toString(@Nullable Event event, boolean b) {
-        if (event instanceof BTBlockTokenDropEvent) {
-            return Double.toString(((BTBlockTokenDropEvent) event).getMultiplierTokens());
-        }
-        if (event instanceof BTFarmingTokenDropEvent) {
-            return Double.toString(((BTFarmingTokenDropEvent) event).getMultiplierTokens());
-        }
-        if (event instanceof BTMythicMobTokenDropEvent) {
-            return Double.toString(((BTMythicMobTokenDropEvent) event).getMultiplierTokens());
-        }
-        if (event instanceof BTMobTokenDropEvent) {
-            return Double.toString(((BTMobTokenDropEvent) event).getMultiplierTokens());
-        }
-        return null;
+        return "event-multiplier";
     }
 
     @Override

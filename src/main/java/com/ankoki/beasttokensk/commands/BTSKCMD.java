@@ -2,6 +2,7 @@ package com.ankoki.beasttokensk.commands;
 
 import com.ankoki.beasttokensk.utils.Utils;
 import me.mraxetv.beasttokens.BeastTokensAPI;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -25,20 +26,13 @@ public class BTSKCMD implements CommandExecutor {
             return true;
         }
         Player p = (Player) sender;
-        if (args[0].equalsIgnoreCase("debug")) {
-            p.sendMessage(Utils.cC("&7[&6BEFORE ADD&7] &bPlayer Tokens: " + BeastTokensAPI.getTokensManager().getTokens(p)));
-            BeastTokensAPI.getTokensManager().addTokens(p, 100);
-            p.sendMessage(Utils.cC("&7[&6AFTER ADD&7] &bPlayer Tokens: " + BeastTokensAPI.getTokensManager().getTokens(p)));
-            p.sendMessage(Utils.cC("&7[&6BEFORE REMOVE&7] &bPlayer Tokens: " + BeastTokensAPI.getTokensManager().getTokens(p)));
-            BeastTokensAPI.getTokensManager().removeTokens(p, 50);
-            p.sendMessage(Utils.cC("&7[&6AFTER REMOVE&7] &bPlayer Tokens: " + BeastTokensAPI.getTokensManager().getTokens(p)));
-            p.sendMessage(Utils.cC("&7[&6BEFORE SET&7] &bPlayer Tokens: " + BeastTokensAPI.getTokensManager().getTokens(p)));
-            BeastTokensAPI.getTokensManager().setTokens(p, 25);
-            p.sendMessage(Utils.cC("&7[&6AFTER SET&7] &bPlayer Tokens: " + BeastTokensAPI.getTokensManager().getTokens(p)));
-            return true;
-        }
         if (args[0].equalsIgnoreCase("update")) {
             Utils.sendUpdate(p);
+            return true;
+        }
+        else if (args[0].equalsIgnoreCase("docs") || args[0].equalsIgnoreCase("documentation") || args[0].equalsIgnoreCase("doc")) {
+            p.sendMessage(Utils.pCc("Here is our documentation on skUnity!"));
+            p.spigot().sendMessage(Utils.clickableUrl(Utils.cC("&8[&csk&fUnity&8]"), Utils.cC("&7Click me to visit our documentation!"), "https://docs.skunity.com/syntax/search/addon:BeastTokenSk", ChatColor.BLUE));
             return true;
         }
         else {

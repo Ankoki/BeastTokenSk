@@ -2,7 +2,6 @@ package com.ankoki.beasttokensk.elements.expressions;
 
 import ch.njol.skript.Skript;
 import ch.njol.skript.classes.Changer.ChangeMode;
-import ch.njol.skript.doc.*;
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.ExpressionType;
 import ch.njol.skript.lang.SkriptParser;
@@ -15,13 +14,10 @@ import org.bukkit.event.Event;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-@Name("Player Tokens")
-@Description("Gets a players BeastTokens.")
-@Examples({"on death:" +
-        "\tremove 100 from player's tokens",
-        "\tsend \"You have lost 100 tokens!\""})
-@Since("1.0")
-@RequiredPlugins("BeastTokens")
+
+/* Player Tokens
+ * Since 1.0
+ */
 public class ExprPlayerTokens extends SimpleExpression<Double> {
 
     static {
@@ -67,7 +63,7 @@ public class ExprPlayerTokens extends SimpleExpression<Double> {
 
     @Override
     public void change(@NotNull Event event, Object[] delta, ChangeMode mode) {
-        assert player != null;
+        if (player == null) return;
         Player p = player.getSingle(event);
         double d = delta == null ? 0 : ((Number) delta[0]).doubleValue();
         if (p != null) {
