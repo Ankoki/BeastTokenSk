@@ -3,6 +3,7 @@ package com.ankoki.beasttokensk.elements.expressions;
 
 import ch.njol.skript.Skript;
 import ch.njol.skript.aliases.ItemType;
+import ch.njol.skript.doc.*;
 import ch.njol.skript.lang.Expression;
 import ch.njol.skript.lang.ExpressionType;
 import ch.njol.skript.lang.SkriptParser;
@@ -12,13 +13,17 @@ import me.mraxetv.beasttokens.BeastTokensAPI;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.Nullable;
 
-/* Token Slips
- * Since 1.1
- */
+@Name("Token Slips")
+@Description("Gets a token slip")
+@Examples({"command /tokenslip" +
+        "\ttrigger",
+        "\t\tgive player a beast token slip worth 5000 beast tokens"})
+@Since("1.0")
+@RequiredPlugins("BeastTokens")
 public class ExprTokenSlip extends SimpleExpression<ItemType> {
 
     static {
-        Skript.registerExpression(ExprTokenSlip.class, ItemType.class, ExpressionType.SIMPLE, "a [beast[ ]]token slip worth %number%");
+        Skript.registerExpression(ExprTokenSlip.class, ItemType.class, ExpressionType.SIMPLE, "a [beast[ ]]token slip worth %number% [[beast[ ]]tokens]");
     }
 
     private Expression<Number> tokens;

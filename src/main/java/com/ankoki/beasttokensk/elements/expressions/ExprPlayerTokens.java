@@ -8,16 +8,20 @@ import ch.njol.skript.lang.SkriptParser;
 import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
 import ch.njol.util.coll.CollectionUtils;
+import ch.njol.skript.doc.*;
 import me.mraxetv.beasttokens.BeastTokensAPI;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-
-/* Player Tokens
- * Since 1.0
- */
+@Name("Player Tokens")
+@Description("Gets a players BeastTokens.")
+@Examples({"on death:" +
+        "\tremove 100 from player's tokens",
+        "\tsend \"You have lost 100 tokens!\""})
+@Since("1.0")
+@RequiredPlugins("BeastTokens")
 public class ExprPlayerTokens extends SimpleExpression<Double> {
 
     static {

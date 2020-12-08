@@ -6,13 +6,17 @@ import ch.njol.skript.lang.ExpressionType;
 import ch.njol.skript.lang.SkriptParser;
 import ch.njol.skript.lang.util.SimpleExpression;
 import ch.njol.util.Kleenean;
+import ch.njol.skript.doc.*;
 import me.mraxetv.beasttokens.BeastTokensAPI;
 import org.bukkit.event.Event;
 import org.jetbrains.annotations.Nullable;
 
-/* Max Tokens
- * Since 1.0
- */
+@Name("Max Tokens")
+@Description("The max tokens set in the config.")
+@Examples({"command /max:",
+        "\ttrigger:",
+        "\t\tsend \"Max Tokens: %max tokens%\""})
+@Since("1.0")
 public class ExprMaxTokens extends SimpleExpression<Double> {
 
     static {

@@ -12,9 +12,18 @@ import org.bukkit.event.Event;
 import me.mraxetv.beasttokens.api.events.tokendrops.blocks.BTBlockTokenDropEvent;
 import org.jetbrains.annotations.Nullable;
 
-/* Block Token Drop
- * Since 1.0
- */
+import ch.njol.skript.doc.*;
+
+@Name("Block Token Drop")
+@Description("Fired when a block drops BeastTokens.")
+@Examples({"on block token drop:" +
+        "\tif player has permission \"tokens.gain\":",
+        "\t\tsend \"You broke %event-block% and recieved %event-tokens% tokens\"",
+        "\t\tstop",
+        "\tcancel event",
+        "\tsend \"You can't earn tokens until you have unlocked this!\""})
+@Since("1.0")
+@RequiredPlugins("BeastTokens")
 public class EvtBlockTokenDrop extends SimpleEvent {
 
     static {
