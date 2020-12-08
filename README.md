@@ -13,8 +13,10 @@ To use, place BeastTokens, Skript, and BeastTokenSk in the plugins folder in you
 
 #Documentation
 **skUnity**  
-Documentation can now also be found on skUnity!
-Please see here: https://docs.skunity.com/syntax/search/addon:BeastTokenSk
+Documentation can now also be found on skUnity and SkriptHub!
+Please see here:   
+[skUnity](https://docs.skunity.com/syntax/search/addon:BeastTokenSk)  
+[![SkriptHubViewTheDocs](http://skripthub.net/static/addon/ViewTheDocsButton.png)](http://skripthub.net/docs/?addon=BeastTokenSk)
 
 # Events
 **Block Token Drop Event**  
@@ -129,9 +131,9 @@ command /redeem:
         add 100 to player's tokens
 ```  
 # Support  
-If you have any issues, feel free to join our discord here -> discord.com/invite/aCDNj8s 
-You can also send me a private DM at **Ankoki#0001**
-# Current Version 1.0  
+If you have any issues, feel free to join our discord [here](discord.com/invite/aCDNj8s), 
+You can also send me a private DM at **Ankoki#0001** and I should reply in reasonable time:)
+# Current Version 1.1  
 This concludes the documentation for BeastTokenSk.  
 This will be updated as soon as the plugin itself, and documentation may be hosted in other areas at some point.  
 Thank you for using BeastTokenSk!
